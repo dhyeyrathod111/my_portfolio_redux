@@ -1,5 +1,4 @@
 import config from 'react-global-configuration';
-
 export const initialLoadSkill = () => {
     return async dispatch => {
         const response_promiss = await fetch(`${config.get('api_url')}/all_skill/6`);

@@ -17,12 +17,18 @@ import ResumePage from './pages/ResumePage';
 config.set({
     api_url: 'http://localhost/dhyey_rathod/React/my_portfolio/apistacksetup/API/',
     api_image_url: 'http://localhost/dhyey_rathod/React/my_portfolio/apistacksetup/',
+    facebook_url: 'https://www.facebook.com/dhyey.rathod.98',
+    instagram_url:'https://www.instagram.com/prince.rathod111/'
 });
 
 // config.set({ 
 //     api_url:'http://dhyeyrathod.rf.gd/apistacksetup/API/',
 //     api_image_url:'http://dhyeyrathod.rf.gd/apistacksetup/',
+//     facebook_url: 'https://www.facebook.com/dhyey.rathod.98',
+//     instagram_url:'https://www.instagram.com/prince.rathod111/'
 // });
+
+
 
 export default class App extends Component {
     render() {

@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import Axios from 'axios';
 import Loading from '../pages/Loading';
 import Alert from '../components/Alert';
+import config from 'react-global-configuration';
 
 export default class ContactUsForm extends Component {
     constructor(props) {
@@ -24,7 +25,12 @@ export default class ContactUsForm extends Component {
         });
         this.form.onformsubmit = (event) => {
             this.setState({ loading_status: true });
-            Axios.post('http://localhost/dhyey_rathod/company/admin/api/contact', this.state)
+            let formData = new FormData();
+            formData.append('name', this.state.name);
+            formData.append('email', this.state.email);
+            formData.append('contact', this.state.contact);
+            formData.append('user_message', this.state.user_message);
+            Axios.post(`${config.get('api_url')}contactus`, formData)
                 .then((response) => {
                     this.setState({ loading_status: false });
                     if (response.data.status === 'T') {

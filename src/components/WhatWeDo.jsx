@@ -24,7 +24,7 @@ class WhatWeDo extends Component {
             <section className="service-section padding-bottom padding-top">
                 <div className="container">
                     <div className="section-header wow fadeInUp">
-                        <h2 className="title">what I do</h2>
+                        <h2 className="title">My Technical Expertise</h2>
                     </div>
                     <div className="row justify-content-center mb-30-none">
                         <Loading loading_status={this.props.skillsReducer.loader} />

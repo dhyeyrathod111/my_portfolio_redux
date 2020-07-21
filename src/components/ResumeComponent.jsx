@@ -1,95 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import config from 'react-global-configuration';
-import { Accordion, Card } from 'react-bootstrap';
+
+const Education = props => {
+    return (
+        <div className="container">
+            <div className="section-header">
+                <h2 className="title">Education</h2>
+            </div>
+            <div className="row mb-30-none justify-content-center">
+                <div className="col-md-12">
+                    <div className="reseller-item reseller-item-two text-center">
+                        <div className="reseller-content">
+                            <h5 className="title">SSC(2009 - 2010)</h5>
+                            <p>Studied at Mumbai University</p>
+                            <p>Certified SSC from Mumbai University</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="col-md-12">
+                    <div className="reseller-item reseller-item-two text-center">
+                        <div className="reseller-content">
+                            <h5 className="title">HSC(2012 - 2013)</h5>
+                            <p>Studied at Mumbai University</p>
+                            <p>Certified SSC from Mumbai University</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-12">
+                    <div className="reseller-item reseller-item-two text-center">
+                        <div className="reseller-content">
+                            <h5 className="title">BCA(2016 - 2017)</h5>
+                            <p>Studied at Atharva Institute of Information Technology (AIIT)</p>
+                            <p>Certified SSC from Mumbai AIIT</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    );
+}
+
+const WorkExperience = props => {
+    return (
+        <div className="container">
+            <div className="section-header">
+                <h2 className="title">Work experience</h2>
+            </div>
+
+            <div className="row mb-30-none justify-content-center">
+                <div className="col-md-12">
+                    <div className="reseller-item reseller-item-two text-center">
+                        <div className="reseller-content">
+                            <h5 className="title"> Webinfotech - 1.5 year experience (2017-2018) </h5>
+                            <p>Senior PHP Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="row mb-30-none justify-content-center">
+                <div className="col-md-12">
+                    <div className="reseller-item reseller-item-two text-center">
+                        <div className="reseller-content">
+                            <h5 className="title">WDIPL - 1 year experience (2019-2020)</h5>
+                            <p>Junior PHP Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    );
+}
 
 const ResumeComponent = (props) => {
+
+    const [active, setActive] = useState('work');
+    const pointMark = {cursor:"pointer"}
+
     return (
         <section className="faq-section padding-top padding-bottom">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-8">
-                        <div className="faq-area">
-                            <h3 className="main-title">EDUCATION</h3>
-                            <div className="faq-wrapper">
-                                <Accordion defaultActiveKey="0">
-                                    <Accordion.Toggle variant="link" eventKey="0">
-                                        <div className="faq-title">
-                                            <h6 className="title">SSC - 2009 - 2010</h6>
-                                            <span className="right-icon" />
-                                        </div>
-                                    </Accordion.Toggle>
-                                    <Accordion.Collapse eventKey="0">
-                                        <div className="faq-content">
-                                            <p> <b> Studied at Mumbai University </b> </p>
-                                            <p> <b> Certified SSC from Mumbai University </b> </p>
-                                        </div>
-                                    </Accordion.Collapse>
-                                </Accordion>
-
-
-                                <Accordion defaultActiveKey="2">
-                                    <Accordion.Toggle variant="link" eventKey="0">
-                                        <div className="faq-title">
-                                            <h6 className="title">HSC - 2012 - 2013</h6>
-                                            <span className="right-icon" />
-                                        </div>
-                                    </Accordion.Toggle>
-                                    <Accordion.Collapse eventKey="0">
-                                        <div className="faq-content">
-                                            <p> <b> Studied at Mumbai University </b> </p>
-                                            <p> <b> Certified SSC from Mumbai University </b> </p>
-                                        </div>
-                                    </Accordion.Collapse>
-                                </Accordion>
-
-                                <Accordion defaultActiveKey="3">
-                                    <Accordion.Toggle variant="link" eventKey="0">
-                                        <div className="faq-title">
-                                            <h6 className="title">BCA(Bachelor in Computer Application) - 2016 - 2017</h6>
-                                            <span className="right-icon" />
-                                        </div>
-                                    </Accordion.Toggle>
-                                    <Accordion.Collapse eventKey="0">
-                                        <div className="faq-content">
-                                            <p> <b> Studied at Atharva Institute of Information Technology (AIIT) </b> </p>
-                                            <p> <b> Certified SSC from Mumbai AIIT </b> </p>
-                                        </div>
-                                    </Accordion.Collapse>
-                                </Accordion>
-
-                            </div>
-                            <h3 className="main-title">EXPERIENCE</h3>
-                            <div className="faq-wrapper">
-                                <Accordion defaultActiveKey="4">
-                                    <Accordion.Toggle variant="link" eventKey="0">
-                                        <div className="faq-title">
-                                            <h6 className="title"> Webinfotech - 1.5 year experience (2017-2018) </h6>
-                                            <span className="right-icon" />
-                                        </div>
-                                    </Accordion.Toggle>
-                                    <Accordion.Collapse eventKey="0">
-                                        <div className="faq-content">
-                                            <p> <b> Senior PHP Developer </b> </p>
-                                        </div>
-                                    </Accordion.Collapse>
-                                </Accordion>
-                                <Accordion defaultActiveKey="4">
-                                    <Accordion.Toggle variant="link" eventKey="0">
-                                        <div className="faq-title">
-                                            <h6 className="title"> WDIPL - 1 year experience (2019-2020) </h6>
-                                            <span className="right-icon" />
-                                        </div>
-                                    </Accordion.Toggle>
-                                    <Accordion.Collapse eventKey="0">   
-                                        <div className="faq-content">
-                                            <p><b> Junior PHP Developer </b></p>
-                                        </div>
-                                    </Accordion.Collapse>
-                                </Accordion>
-
-                            </div>
-                        </div>
-                    </div>
                     <div className="col-md-4">
                         <aside className="sidebar">
                             <div className="widget widget-category">
@@ -104,7 +97,19 @@ const ResumeComponent = (props) => {
                                     </li>
                                 </ul>
                             </div>
+                            <div className="widget widget-category">
+                                <div className="widget-header">
+                                    <h5 className="title">Life Line</h5>
+                                </div>
+                                <ul>
+                                    <li style={pointMark}><a onClick={() => setActive('work')}>Work Experience</a></li>
+                                    <li style={pointMark}><a onClick={() => setActive('education')}>Education</a></li>
+                                </ul>
+                            </div>
                         </aside>
+                    </div>
+                    <div className="col-md-8">
+                        {active === 'work' ? <WorkExperience /> : <Education />}
                     </div>
                 </div>
             </div>

@@ -40,4 +40,8 @@ class APImodel extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    public function new_contact_message($inpiut_stack)
+    {
+        return $this->db->insert('contact_us', $inpiut_stack);
+    }
 }

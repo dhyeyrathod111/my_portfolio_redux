@@ -10,12 +10,13 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import allReducers from "./reducers/";
 import { initialLoadSkill } from "./actions/skillAction";
-
+import { initialLoadProjct } from "./actions/projectAction";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(allReducers, composeEnhancers(applyMiddleware(thunk)));
 
 store.dispatch(initialLoadSkill())
+store.dispatch(initialLoadProjct())
 
 ReactDOM.render(
     <BrowserRouter>

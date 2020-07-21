@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import PageHead from '../components/PageHead';
 import Breadcrumb from '../components/Breadcrumb';
 import ProjectSection from '../components/ProjectSection';
-import CounterUp from '../components/CounterUp';
 import Footer from '../components/Footer';
 
 export default class Projects extends Component {
@@ -16,9 +15,7 @@ export default class Projects extends Component {
                 <Header />
                 <PageHead headValue={'My projects'} />
                 <Breadcrumb pageName={'service'} />
-                <ProjectSection />  
-                <CounterUp />
-                {/* <Blog /> */}
+                <ProjectSection />
                 <Footer />
             </React.Fragment>
         );

@@ -52,7 +52,28 @@ class API extends REST_Controller
 	}
 	public function contactus_post()
 	{
-		echo json_encode(array("hey" => "hey!"));
+		$this->form_validation->set_rules('name', 'Name', 'required');	
+		$this->form_validation->set_rules('email', 'Email', 'required');	
+		$this->form_validation->set_rules('contact', 'Contact', 'required');	
+		$this->form_validation->set_rules('user_message', 'Message', 'required');	
+		if($this->form_validation->run()){
+			$insert_payload['name'] = $this->security->xss_clean($this->input->post('name'));
+			$insert_payload['email'] = $this->security->xss_clean($this->input->post('email'));
+			$insert_payload['contact_number'] = $this->security->xss_clean($this->input->post('contact'));
+			$insert_payload['messsage'] = $this->security->xss_clean($this->input->post('user_message'));
+			$insertContactRes = $this->api_model->new_contact_message($insert_payload);
+			if($insertContactRes){
+				$api_response['status'] = 'T';
+                $api_response['message'] = 'Your query has been submited successfully.';
+			} else {
+				$api_response['status'] = 'F';
+                $api_response['message'] = 'Sorry, we have to face some technical issues please try again later.';
+			}
+		} else {	
+			$api_response['status'] = 'F';
+            $api_response['message'] = validation_errors();
+		}
+		return $this->output->set_content_type('application/json')->set_output(json_encode($api_response));
 	}
 	public function contactus_options() {
         return $this->response(NULL, REST_Controller::HTTP_OK); 

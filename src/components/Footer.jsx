@@ -1,102 +1,82 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-export default class Footer extends Component {
-    render() {
-        return (
-            <footer>
-                {/* <div className="footer-top padding-top padding-bottom">
-                    <div className="container">
-                        <div className="row mb-50-none">
-                            <div className="col-sm-6 col-lg-3">
-                                <div className="footer-widget footer-link">
-                                    <h5 className="title">bulk SMS</h5>
-                                    <ul>
-                                        <li>
-                                            <a href="#0">masking SMS</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">Non-Masking SMS</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">location based SMS</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">Voice message</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">promo SMS</a>
-                                        </li>
-                                    </ul>
-                                </div>
+import { connect } from "react-redux";
+import config from 'react-global-configuration';
+const mapStateToProps = state => {
+    return {
+        projectList: state.projectReducer.allProjects.slice(0, 6),
+    }
+}
+const OneProject = props => {
+    return (
+        <li>
+            <a target="_blank" href={props.projectDetails.website_url}>{props.projectDetails.title}</a>
+        </li>
+    )
+}
+const Footer = props => {
+    return (
+        <footer>
+            <div className="footer-top padding-top padding-bottom">
+                <div className="container">
+                    <div className="row mb-50-none">
+                        <div className="col-sm-6 col-lg-4">
+                            <div className="footer-widget footer-link">
+                                <h5 className="title">Project</h5>
+                                <ul>
+                                    {props.projectList.map( ( item , index ) => (
+                                        <OneProject projectDetails={item} key={index} />
+                                    ))}
+                                </ul>
                             </div>
-                            <div className="col-sm-6 col-lg-3">
-                                <div className="footer-widget footer-link">
-                                    <h5 className="title">company</h5>
-                                    <ul>
-                                        <li>
-                                            <a href="#0">about</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">pricing plan</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">faq</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">testiminial</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">promotion</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                        </div>
+                        <div className="col-sm-6 col-lg-4">
+                            <div className="footer-widget footer-link">
+                                <h5 className="title">Pages</h5>
+                                <ul>
+                                    <li>
+                                        <Link to={'/'}>Home</Link>
+                                    </li>
+                                    <li>
+                                        <Link to={'/about'}>about</Link>
+                                    </li>
+                                    <li>
+                                        <Link to={'/projects'}>Projects</Link>
+                                    </li>
+                                    <li>
+                                        <Link to={'/service'}>service</Link>
+                                    </li>
+                                    <li>
+                                        <Link to={'/resume'}>resume</Link>
+                                    </li>
+                                    <li>
+                                        <Link to={'/contact'}>Contact Us</Link>
+                                    </li>
+                                </ul>
                             </div>
-                            <div className="col-sm-6 col-lg-3">
-                                <div className="footer-widget footer-link">
-                                    <h5 className="title">Partners</h5>
-                                    <ul>
-                                        <li>
-                                            <a href="#0">kingstar</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">laravala click</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">yago</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-sm-6 col-lg-3">
-                                <div className="footer-widget footer-about">
-                                    <h5 className="title">about us</h5>
-                                    <p>Tellus fermentum a aenean laoreet libero in, at convallis varius morbi.</p>
-                                    <ul className="footer-social">
-                                        <li>
-                                            <a href="#0"><i className="fab fa-facebook-f" /></a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"><i className="fab fa-twitter" /></a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"><i className="fab fa-instagram" /></a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"><i className="fab fa-linkedin-in" /></a>
-                                        </li>
-                                    </ul>
-                                </div>
+                        </div>
+                        <div className="col-sm-6 col-lg-4">
+                            <div className="footer-widget footer-about">
+                                <h5 className="title">Social</h5>
+                                <ul className="footer-social">
+                                    <li>
+                                        <a target="_blank" href={config.get('facebook_url')}><i className="fab fa-facebook-f" /></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href={config.get('instagram_url')}><i className="fab fa-instagram" /></a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div> */}
-                <div className="footer-bottom py-3 py-sm-4 text-center">
-                    <div className="container">
-                        <p className="m-0"><Link to={'/'}>Dhyey Rathod</Link> All Rights reserved</p>
-                    </div>
                 </div>
-            </footer>
-        );
-    }
+            </div>
+            <div className="footer-bottom py-3 py-sm-4 text-center">
+                <div className="container">
+                    <p className="m-0"><Link to={'/'}>Dhyey Rathod</Link> All Rights reserved</p>
+                </div>
+            </div>
+        </footer>
+    )
 }
+export default connect(mapStateToProps)(Footer);

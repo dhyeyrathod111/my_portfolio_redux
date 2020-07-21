@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from 'react-global-configuration';
 
 export default class HeaderTop extends Component {
     render() {
@@ -20,23 +21,13 @@ export default class HeaderTop extends Component {
                             <div className="col-md-4 d-flex flex-wrap align-items-center justify-content-end">
                                 <ul className="social">
                                     <li>
-                                        <a href="#0">
+                                        <a target="_blank" href={config.get('facebook_url')}>
                                             <i className="fab fa-facebook-f" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#0">
-                                            <i className="fab fa-twitter" />
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#0">
+                                        <a target="_blank" href={config.get('instagram_url')}>
                                             <i className="fab fa-instagram" />
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#0">
-                                            <i className="fab fa-linkedin-in" />
                                         </a>
                                     </li>
                                 </ul>

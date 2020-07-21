@@ -3521,7 +3521,8 @@ ul.bullet-list {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.77); }
+    /* background: rgba(0, 0, 0, 0.77); */
+   }
   @media (min-width: 768px) {
     .video-wrapper {
       min-height: 605px; } }
