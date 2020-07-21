@@ -17,7 +17,7 @@ export default class AboutPage extends Component {
         return (
             <React.Fragment>
                 <Helmet>
-                    <title>Website Designer and Developer in Mumbai | Dhyey Rathod</title>
+                    <title>Website Developer In Mumbai About us | Dhyey Rathod</title>
                     <meta name="description" content="Rated the best developer in Mumbai, India. dhyeyrathod has worked with a range of renowned clients across multiple industries." />
                 </Helmet>
                 <Header />

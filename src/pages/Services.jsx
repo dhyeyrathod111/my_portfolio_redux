@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from "react-helmet";
 
 import Header from '../components/Header';
 import PageHead from '../components/PageHead';
@@ -16,6 +17,10 @@ export default class Services extends Component {
         return (
             <React.Fragment>
                 <Header />
+                <Helmet>
+                    <title>Website Developer In Mumbai Services | Dhyey Rathod</title>
+                    <meta name="description" content={`My Excellent Services That Will Help To Grow Your Bussiness | Dhyey Rathod`} />
+                </Helmet>
                 <PageHead headValue={'My Technical Expertise'} />
                 <Breadcrumb pageName={'Technical Expertise'} />
                 <WhatWeDo pageSource={'servicePage'}/>

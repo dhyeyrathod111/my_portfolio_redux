@@ -22,10 +22,12 @@ export default class Homepage extends Component {
         return (
             <React.Fragment>
                 <Header />
+
                 <Helmet>
-                    <title>Website Designer and Developer in Mumbai | Dhyey Rathod</title>
+                    <title>Website Developer and Designer  in Mumbai | Dhyey Rathod</title>
                     <meta name="description" content="Rated the best developer in Mumbai, India. dhyeyrathod has worked with a range of renowned clients across multiple industries." />
                 </Helmet>
+
                 <SearchForm />
                 <Banner />
                 <WhatWeOffer />
