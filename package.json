@@ -4,7 +4,7 @@
   "homepage": "http://dhyeyrathod.rf.gd",
   "private": true,
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "jquery-form-validator": "^2.3.79",
     "react": "^16.13.1",
